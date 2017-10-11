@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script type="text/javascript">
+		function Person (name,sex,age) {
+			this.name=name;
+			this.sex=sex;
+			this.age=age;
+			this.grow = function () {
+				this.age++;
+			}
+		}
+		var liudehua = new Person("刘德华","男",30);
+		console.log(liudehua);
+		liudehua.grow();
+		liudehua.grow();
+		console.log(liudehua);
+	</script>
+</html>

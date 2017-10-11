@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{padding: 0;margin:0;}
+			.rig{width: 150px;height: 200px;background-color:skyblue;display: none;position:absolute;}
+			ul{position: absolute;}
+			li{list-style: none;height: 25px;width: 150px;}
+			li:hover{
+				background-color:#ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="rig">
+			<ul>
+				<li>查看项目</li>
+				<li>查看性别</li>
+				<li>刷新</li>
+				<li>清空缓冲</li>
+				<li>复制</li>
+				<li>粘贴</li>
+				<li>剪贴</li>
+				<li>查看属性</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var odiv=document.querySelector(".rig");
+		document.oncontextmenu=function (event) {
+			event.preventDefault();
+			odiv.style.display="block";
+			odiv.style.left=event.clientX+"px";
+			odiv.style.top=event.clientY+"px";
+		}
+		document.onclick=function () {
+			odiv.style.display="none"
+		}
+//		var right= new Event("right");
+//		document.addEventListener("right",function () {
+//			odiv.style.display="block"
+//		})
+//		document.oncontextmenu=function (event) {
+//			event.preventDefault();
+//			document.dispatchEvent(right);
+//		}
+		
+	</script>
+</html>

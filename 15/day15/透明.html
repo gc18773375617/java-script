@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<img src="img/0.jpg"/>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oim=document.getElementsByTagName("img")[0];
+		var i=0;
+		function move () {
+			setInterval(function () {
+				i++
+				oim.style.opacity="."+i;
+				if (i==10) {
+					
+				}
+				console.log(i);
+			},100)	
+		}
+		move();
+		
+	</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{height:100px;width:100px;}
+		</style>
+	</head>
+	<body>
+		<div id=""></div>
+		<button>弹数字</button>
+	</body>
+	<script>
+		var oscr=document.getElementsByTagName("script")[0];
+		var btn=document.getElementsByTagName("button")[0];
+		var arr=[];
+		arr[0]="js1.js"
+		arr[1]="js2.js"
+		arr[2]="js3.js"
+		arr[3]="js4.js"
+		arr[4]="js5.js"
+		var i=0
+		btn.onclick=function () {
+			var oScript = document.createElement('script');
+     	 	if (i==5) {
+     	 		i=0;	
+     	 	}
+     	 	oScript.src =arr[i];
+     	 	i++;
+     	 	document.body.appendChild(oScript);
+			
+		}
+	</script>
+</html>

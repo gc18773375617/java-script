@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.bor{width: 500px;height: 100px;border: 5px solid black;margin: 50px auto;position: relative;}
+			li{list-style: none;position: absolute;}
+			.pic1{left:160px;}
+			.pic2{left:320px;}
+			.pic3{left:480px;}
+			.pic4{left:640px;}
+			img{width:150px;height: 100px;}
+			ul{width:1200px;}
+		</style>
+	</head>
+	<body>
+		<div class="bor">
+			<ul>
+				<li class="pic"><img src="img/0.jpg"/></li>
+				<li class="pic1"><img src="img/1.jpg"/></li>
+				<li class="pic2"><img src="img/2.jpg"/></li>
+				<li class="pic3"><img src="img/3.jpg"/></li>
+				<li class="pic4"><img src="img/4.jpg"/></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var oli=document.getElementsByTagName("li");
+		var oull=oli[0].offsetLeft;
+		var i=0;
+		timer=setInterval(function () {
+			oull-=3;
+			oli[0].style.left=oull+"px"
+			if (oull<=-160) {
+				oull=640;
+				oli[0].style.left=oull+"px";
+			}
+		},20);
+		var oull1=oli[1].offsetLeft;
+		timer1=setInterval(function () {
+			oull1-=3;
+			oli[1].style.left=oull1+"px"
+			if (oull1<=-160) {
+				oull1=640;
+				oli[1].style.left=oull1+"px";
+			}
+		},20);
+		var oull2=oli[2].offsetLeft;
+		timer2=setInterval(function () {
+			oull2-=3;
+			oli[2].style.left=oull2+"px"
+			if (oull2<=-160) {
+				oull2=640;
+				oli[2].style.left=oull2+"px";
+			}
+		},20);
+		var oull3=oli[3].offsetLeft;
+		timer3=setInterval(function () {
+			oull3-=3;
+			oli[3].style.left=oull3+"px"
+			if (oull3<=-160) {
+				oull3=640;
+				oli[3].style.left=oull3+"px";
+			}
+		},20);
+		var oull4=oli[4].offsetLeft;
+		timer4=setInterval(function () {
+			oull4-=3;
+			oli[4].style.left=oull4+"px"
+			if (oull4<=-160) {
+				oull4=640;
+				oli[4].style.left=oull4+"px";
+			}
+		},20);
+	</script>
+</html>

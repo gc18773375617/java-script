@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var char=prompt("请输入");
+			char=char+" ";
+			function maxr(char){
+				var arr=[]
+				char=char.split("");
+				for(i=0;i<char.length;i++){
+					for (n=i+1;n<char.length;n++) {
+						if (char[i]!=char[n]) {
+							arr[arr.length]=char.slice(i,n);
+							i=n;
+						}
+					}
+				}
+				console.log(arr);
+				var max
+				for (v=0;v<arr.length;v++) {
+					for (b=v+1;b<arr.length;b++) {
+						if (arr[v].length<arr[b].length) {
+							max=arr[b];
+						}
+					}
+				}
+				console.log(max.join(""));
+			}
+			maxr(char);
+		</script>
+	</body>
+</html>

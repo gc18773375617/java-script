@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding:0;}
+			div{width: 100px;height:100px;background-color:red;position: absolute;top: 100px;left: 500px;}
+		</style>
+	</head>
+	<body>
+		<!--<input type="" name="" id="in" value="" />
+		<div></div>
+		<button>左</button>
+		<button>右</button>-->
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+		<p>7</p>
+		<p>8</p>
+		<p>9</p>
+		<p>0</p>
+	</body>
+	<script>
+//		var pp=document.body.childNodes;
+//		console.log(pp);
+//		var arr=[];
+//		for (i=0;i<pp.length;i++) {
+//			console.log(pp.childNodes[i].nodeType);
+//			if (pp.childNodes[i].nodeType ==) {
+//				arr.push(pp[i]);
+//			}
+//		}
+//		console.log(pp)
+//		onunload=function (){
+//			window.location.href="index.html";
+//
+//		}
+//		var btn=document.createElement("button");
+//		btn.innerText="点我";
+//		document.body.appendChild(btn);
+//		btn.onclick=function () {
+//			js.src="js/js.js"
+//			document.body.appendChild(js);
+//		}
+//		var oin=document.getElementById("in");
+//	
+//		oin.onfocus=function () {
+//			console.log("获得焦点")
+//		}
+//		oin.onblur=function () {
+//			alert("失掉焦点");
+//			
+//		}
+//		oin.onfocus = null;
+//		var ll=document.getElementsByTagName("button")[0];
+//		var rr=document.getElementsByTagName("button")[1];
+//		var dd=document.getElementsByTagName("div")[0];
+//		var bl=500;
+//		ll.onclick=function () {
+//			bl-=1;
+//			dd.style.left=bl+"px";
+//		}
+//		rr.onclick=function () {
+//			bl+=1;
+//			dd.style.left=bl+"px";
+//		}
+		var arr=document.getElementsByTagName("p");
+		for (i=0;i<arr.length;i+=2) {
+			arr[i].style.background="red";
+			
+		}
+		for (i=1;i<arr.length;i+=2) {
+			arr[i].style.background="green";
+			
+		}
+	</script>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.in{width:760px;}
+			input{font-size:17px;}
+			.js{width: 150px;height: 150px;border: 1px solid black;}
+		</style>
+	</head>
+	<body>
+		<div class="sp1">
+			
+		</div>
+		<input class="in" type="" name="" id="" value="" />
+		<div class="sp2">
+			
+		</div>
+		<input class="in" type="" name="" id="" value="" />
+		<div class="sp3">
+			
+		</div>
+		<input class="in" type="" name="" id="" value="" />
+		<div class="js">
+			<p>时间: 60s</p>
+			<p>打字速度:</p>
+			<p>错误率:0%</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var str="our bodies wanted different things from one another, so what we ended up with was a horizontal"
+		var odiv=document.querySelector(".sp1");
+		var odiv1=document.querySelector(".sp2");
+		var odiv2=document.querySelector(".sp3")
+		var str1="battle. i would hear married girlfriends talk about the joys of make-up sex and continue to sip my"
+		var oin=document.querySelectorAll("input")[0];
+		var oin1=document.querySelectorAll("input")[1];
+		var oin2=document.querySelectorAll("input")[2];
+		var str2="coffee in silence. we would fight, and then have bad sex and then fight some more. every flaw in our" 
+		var st;
+		var st1;
+		var st2;
+		var op=document.getElementsByTagName("p")[0];
+		var op1=document.getElementsByTagName("p")[1];
+		var op2=document.getElementsByTagName("p")[2];
+		var x=60;
+		var y=0;
+		var e=0;
+		for (i=0;i<str.length;i++) {
+			var osp=document.createElement("span");
+			osp.innerText=str[i];
+			odiv.appendChild(osp);
+		}
+		for (i=0;i<str1.length;i++) {
+			var osp=document.createElement("span");
+			osp.innerText=str1[i];
+			odiv1.appendChild(osp);
+		}
+		for (i=0;i<str2.length;i++) {
+			var osp=document.createElement("span");
+			osp.innerText=str2[i];
+			odiv2.appendChild(osp);
+		}
+		var stb=document.querySelectorAll(".sp1 span");
+		var stb1=document.querySelectorAll(".sp2 span");
+		var stb2=document.querySelectorAll(".sp3 span");
+		var i=0;
+		var d=0;
+		oin.onfocus=function () {
+			oin.onkeydown=function (event) {
+				st=event.key;
+				if (st=="Enter") {
+					oin1.focus();
+					return;
+				}
+				if (st=="Backspace") {
+					event.preventDefault();
+					
+					return;
+				}
+				if (stb[i].innerText==st) {
+					stb[i].style.color="blue"
+				} else{
+					stb[i].style.color="red"
+					e++;
+				}
+				i++;
+				d++;
+			}
+		}
+		var j=0;
+		oin1.onfocus=function () {
+			oin1.onkeydown=function (event) {
+				st1=event.key;
+				if (st1=="Enter") {
+					oin2.focus();
+				}
+				if (st1=="Backspace") {
+					event.preventDefault();
+					return;
+				}
+				if (stb1[j].innerText==st1) {
+					stb1[j].style.color="blue"
+				} else{
+					stb1[j].style.color="red"
+					e++;
+				}
+				j++;
+				d++;
+			}
+		}
+		var n=0;
+		oin2.onfocus=function () {
+			oin2.onkeydown=function (event) {
+				st2=event.key;
+				if (st2=="Backspace") {
+					event.preventDefault();
+					return;
+				}
+				if (stb2[n].innerText==st2) {
+					stb2[n].style.color="blue"
+				} else{
+					stb2[n].style.color="red"
+					e++;
+				}
+				n++;
+				d++;
+			}
+		}
+		var time=setInterval(function () {
+			op.innerText="时间: "+x+"s";
+			x--;
+			y++;
+			op1.innerText="打字速度:"+parseInt((d/y)*60)+"KPM"
+			op2.innerText="错误率:"+parseInt((e/d)*100)+"%"
+			if (x==0) {
+				clearInterval(time)
+				alert("打字测试结束");
+				alert("打字速度:"+parseInt((d/y)*60)+"KPM");
+				alert(op2.innerText="错误率:"+parseInt((e/d)*100)+"%");
+				
+				
+			}
+		},1000)
+	</script>
+</html>

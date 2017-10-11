@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			table{border:1px solid #000;text-align: center;margin:30px auto;}
+		</style>
+	</head>
+	<body>
+		<table cellspacing="0" rules="all">
+			<thead>
+				<th>商品名称</th>
+				<th>单价(¥)</th>
+				<th>数量</th>
+				<th>小计</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>iphone7</td>
+					<td class="dj">4600</td>
+					<td>
+						<button onclick="cat(this)">+</button>
+						<span>1</span>
+						<button onclick="cat(this)">-</button>
+					</td>
+					<td class="money">4600</td>
+				</tr>
+				<tr>
+					<td>iphone7plus</td>
+					<td class="dj">5600</td>
+					<td>
+						<button onclick="cat(this)">+</button>
+						<span>1</span>
+						<button onclick="cat(this)">-</button>
+					</td>
+					<td class="money">5600</td>
+				</tr>
+				<tr>
+					<td>ipad pro</td>
+					<td class="dj">4000</td>
+					<td>
+						<button onclick="cat(this)">+</button>
+						<span>1</span>
+						<button onclick="cat(this)">-</button>
+					</td>
+					<td class="money">4000</td>
+				</tr>
+				<tr>
+					<td>mac pro</td>
+					<td class="dj">9600</td>
+					<td>
+						<button onclick="cat(this)">+</button>
+						<span>1</span>
+						<button onclick="cat(this)">-</button>
+					</td>
+					<td class="money">9600</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="3">总计</td>
+					<td id="finally">24000</td>
+				</tr>
+			</tfoot>
+		</table>
+	</body>
+	<script>
+		var b;
+		var n;
+		function cat(b){
+			n=b.parentNode.childNodes[3];
+			if (b.childNodes[0].nodeValue == "+"){
+				n.childNodes[0].nodeValue++;
+				b.parentNode.parentNode.getElementsByClassName("money")[0].innerHTML=parseInt(b.parentNode.parentNode.getElementsByClassName("money")[0].innerHTML)+parseInt(b.parentNode.parentNode.getElementsByClassName("dj")[0].innerHTML);
+				document.getElementById("finally").innerHTML=parseInt(document.getElementById("finally").innerHTML)+parseInt(b.parentNode.parentNode.getElementsByClassName("dj")[0].innerHTML);
+			}else{
+				n.childNodes[0].nodeValue<=1?n.childNodes[0].nodeValue=1:n.childNodes[0].nodeValue--;
+				b.parentNode.parentNode.getElementsByClassName("money")[0].innerHTML=parseInt(b.parentNode.parentNode.getElementsByClassName("money")[0].innerHTML)-parseInt(b.parentNode.parentNode.getElementsByClassName("dj")[0].innerHTML);
+				document.getElementById("finally").innerHTML=parseInt(document.getElementById("finally").innerHTML)-parseInt(b.parentNode.parentNode.getElementsByClassName("dj")[0].innerHTML);
+			}	
+		}
+	</script>
+</html>

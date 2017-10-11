@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+		var fs=[];
+		for(i=0;i>-1;i++){
+			fs[i]=prompt("请输入学生成绩");
+			if (fs[i]=="over"){
+				fs.splice(i,1);
+				break;
+			}
+		}
+		console.log(fs);
+		var z=0;
+		var p=0;
+		var cp=0;
+		var max=fs[0];
+		var m;
+		var min=fs[0];
+		for(n=0;n<fs.length;n++){
+			z=parseInt(z)+parseInt(fs[n]);
+			if(n==fs.length-1){
+				p=z/(fs.length);
+			}
+		}
+		for (b=0;b<fs.length;b++) {
+			if (fs[b]>p) {
+				cp++;
+			}
+		}
+		for (v=0;v<fs.length;v++) {
+			for (c=v+1;c<fs.length;c++) {
+				if(fs[v]<fs[c]){
+					m=fs[c];
+					fs[c]=fs[v];
+					fs[v]=m;
+				}
+			}
+		}
+		max=fs[0];
+		min=fs[fs.length-1];
+		console.log(fs);
+		min=fs[fs.length-1];
+		console.log("总成绩: "+z);
+		console.log("平均成绩: "+p);
+		console.log("超过平均分人数: "+cp);
+		console.log("最高分: "+max);
+		console.log("最低分: "+min);
+		</script>
+	</body>
+</html>

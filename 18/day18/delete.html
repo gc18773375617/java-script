@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="">1</p>
+		<p id="">2</p>
+		<p id="">3</p>
+		<p id="">4</p>
+		<p id="">5</p>
+		<p id="">6</p>
+		<p id="">7</p>
+		<p id="">8</p>
+		<p id="">9</p>
+		<p id="">10</p>
+	</body>
+	<script type="text/javascript">
+		var op=document.querySelectorAll("p");
+		for (i=0;i<op.length;i++) {
+			(function (i) {
+				op[i].onclick=function () {
+					op[i].parentNode.removeChild(op[i]);
+				}
+			})(i)
+		}
+	</script>
+</html>

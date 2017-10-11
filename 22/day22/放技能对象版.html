@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			 *{
+        padding: 0;
+        margin: 0;
+    }
+    div{
+        width: 190px;
+        height: 190px;
+        background: url(img/jian.png) no-repeat;
+        background-position: 0 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+    }
+		</style>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function Sole (left,top) {
+			this.dom=document.createElement("div");
+			document.body.appendChild(this.dom)
+			this.dom.style.left=left+"px";
+			this.dom.style.top=top+"px";
+			this.x=0;
+			this.y=0;
+			this.n=0;
+			var self=this;
+			this.timer = setInterval(function () {
+				self.n++;
+				self.x-=190;
+				self.dom.style.backgroundPosition= self.x + "px"+ " "+self.y+"px";
+				if (self.x<=-760) {
+					self.x = 0;
+					self.y-= 190;
+				}
+				if (self.y<= -2000) {
+					self.x=0;
+					self.y=0;
+				}
+				if(self.n>=9){
+					clearInterval(self.timer)
+				}
+			},300)
+		}
+		var s=new Sole (100,200);
+		var s1=new Sole (200,200);
+		var s2=new Sole (300,200);
+		var s3=new Sole (400,200);
+	</script>
+</html>

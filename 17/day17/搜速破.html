@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="" name="" id="" value="" />
+	</body>
+	<script type="text/javascript">
+		var oin=document.querySelector("input");
+		var timer;
+		function up () {
+			clearInterval(timer);
+			timer=setTimeout(function () {
+				console.log("搜索"+oin.value);
+			},3000)
+		}
+		oin.onkeyup=function () {
+			up();
+		}
+	</script>
+</html>

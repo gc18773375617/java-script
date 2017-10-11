@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var char=prompt("请输入");
+			var n=prompt("请输入巡回数字")
+			function rightchange(char,n){
+				var r;
+				var l;
+				char=char.split("");
+				l=char.slice(-n);
+				r=char.slice(0,-n);
+				char=(l.concat(r));
+				document.write(char.join(""));
+			}
+			rightchange(char,n);
+		</script>
+	</body>
+</html>

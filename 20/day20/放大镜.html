@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.small{position:relative;top: 100px; width: 200px;height: 200px;background: url(img/xiao.jpg);background-size: 100% 100%;float: left;border: 1px solid #ccc;}
+			.big{width:400px;height:400px;background: url(img/da.jpg);float: left;border: 1px solid #ccc;}
+			.zoom{width:100px;height: 100px;position:absolute;background-color:rgba(123,222,111,0.3)}
+		</style>
+	</head>
+	<body>
+		<div class="small">
+			<div class="zoom">
+				
+			</div>
+		</div>
+		<div class="big">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var osmall=document.querySelector(".small")
+		var obig=document.querySelector(".big")
+		var ozoom=document.querySelector(".zoom")
+		osmall.addEventListener("mousemove",function (event) {
+			
+			ozoom.style.left=(event.clientX-osmall.offsetLeft-50)+"px"
+			ozoom.style.top=(event.clientY-osmall.offsetTop-50)+"px"
+			console.log(-parseInt(ozoom.style.left)*4+"px ")
+			
+			if (parseInt(ozoom.style.left)<=0) {
+				ozoom.style.left=0+"px";
+			}
+			if (parseInt(ozoom.style.top)<=0) {
+				ozoom.style.top=0;
+			}
+			if (parseInt(ozoom.style.left)>=100) {
+				ozoom.style.left=100+"px";
+			}
+			if (parseInt(ozoom.style.top)>=100) {
+				ozoom.style.top=100+"px";
+			}
+			obig.style.backgroundPosition=-parseInt(ozoom.style.left)*4+"px "+ -parseInt(ozoom.style.top)*4+"px"
+		})
+		
+	</script>
+</html>

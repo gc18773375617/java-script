@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="" name="" id="" value="" /><button>添加</button>
+		<ul>
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var oin=document.querySelector("input");
+		var oul=document.querySelector("ul");
+		var obt=document.querySelector("button");
+		obt.onclick=function () {
+			var oli=document.createElement("li");
+			oli.innerText=oin.value;
+			oul.appendChild(oli);
+		}
+		oul.onclick=function (event) {
+			event.target.parentNode.removeChild(event.target)
+		}
+	</script>
+</html>

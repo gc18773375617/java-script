@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button>字体变大</button>
+		<button>字体变小</button>
+		<p>我的天的爱神的箭罚款了是减肥的拉升开服就拉丝机分解啊是电缆附件卡视角理发师奖励放卢卡斯分解了
+		屎壳郎的减肥了开始见风使舵肯定分解按时缴费卡拉胶上课来都分解可拉伸机李开复监考老师房间卡了三点来开服就龙四都</p>
+	</body>
+	<script>
+		var bigb=document.getElementsByTagName("button")[0];
+		var minb=document.getElementsByTagName("button")[1];
+		var op=document.getElementsByTagName("p")[0];
+		var fs=parseInt(getComputedStyle(minb).fontSize);
+		
+		bigb.onclick=function () {
+			
+			op.style.fontSize=fs+"px";
+			if (fs>30) {
+				fs=30;
+			}else{fs++}
+			bigb.disabled= fs === 30;
+		}
+		minb.onclick=function () {
+			
+			op.style.fontSize=fs+"px";
+			if (fs<10) {
+				fs=10;
+			}else{fs--}
+			minb.disabled= fs === 10;
+		}
+		console.log(fs);
+		
+		
+	</script>
+</html>

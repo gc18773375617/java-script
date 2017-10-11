@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.pic{width: 500px;height: 200px;background:url(https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=867763555,3368538948&fm=200&gp=0.jpg)no-repeat;background-size:100% 100%;}
+			.left{float: left;margin-top:90px;cursor: pointer;}
+			.right{float: right;margin-top:90px;cursor: pointer;}
+			.foot{width: 500px;height:50px;float:left;margin-top:40px;}
+			.foot ul li{float:left;width:20px;cursor:pointer;margin-left:20px;}
+		</style>
+	</head>
+	<body>
+		<div class="pic">
+			<div class="left">左</div>
+			<div class="right">右</div>
+			<div class="foot">
+				<ul>
+					<li style="color:red"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var arr=['https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=867763555,3368538948&fm=200&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3227881778,1024920219&fm=200&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=401698397,2488925180&fm=200&gp=0.jpg',
+      'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1297268239,2246224922&fm=200&gp=0.jpg'
+      ]
+		var ba=document.getElementsByClassName("pic")[0];
+		var le=document.getElementsByClassName("left")[0];
+		var ri=document.getElementsByClassName("right")[0];
+		var i=0
+		var ll=[];
+		 ll[0] = document.getElementsByTagName("li")[0];
+		 ll[1] = document.getElementsByTagName("li")[1];
+		 ll[2] = document.getElementsByTagName("li")[2];
+		 ll[3] = document.getElementsByTagName("li")[3];
+		le.onclick=function () {
+			i--
+			if (i<0) {
+				i=3;			
+			}
+			ba.style.background="url("+arr[i]+")";
+			for (j=0;j<arr.length;j++) {
+				ll[j].style.color="black"
+			}
+			ll[i].style.color="red";
+			
+		}
+		ri.onclick=function () {
+			i++
+			if (i>3) {
+				i=0;			
+			}
+			ba.style.background="url("+arr[i]+")";
+			for (j=0;j<arr.length;j++) {
+				ll[j].style.color="black"
+			}
+			ll[i].style.color="red";
+		}
+		ll[0].onclick=function () {
+			for (i=0;i<arr.length;i++) {
+				ll[i].style.color="black"
+			}
+			this.style.color="red";
+			i=0;
+			ba.style.background="url("+arr[i]+")";
+		}
+		ll[1].onclick=function () {
+			for (i=0;i<arr.length;i++) {
+				ll[i].style.color="black"
+			}
+			this.style.color="red";
+			i=1;
+			ba.style.background="url("+arr[i]+")";
+		}
+		ll[2].onclick=function () {
+			for (i=0;i<arr.length;i++) {
+				ll[i].style.color="black"
+			}
+			this.style.color="red";
+			i=2;
+			ba.style.background="url("+arr[i]+")";
+		}
+		ll[3].onclick=function () {
+			for (i=0;i<arr.length;i++) {
+				ll[i].style.color="black"
+			}
+			this.style.color="red";
+			i=3;
+			ba.style.background="url("+arr[i]+")";
+		}
+	</script>
+</html>

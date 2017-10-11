@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/1200.css"/>
+	</head>
+	<body>
+		<div class="text">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+				<li>10</li>
+				<li>11</li>
+				<li>12</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var olink=document.head.getElementsByTagName("link")[0];
+		console.log(olink.href);
+		window.addEventListener("resize",function () {
+			if (document.body.clientWidth<=320) {
+				olink.href="css/320.css"
+				return;
+			}
+			if (document.body.clientWidth<=640) {
+				olink.href="css/640.css"
+				return;
+			}
+			if (document.body.clientWidth<=980) {
+				olink.href="css/980.css"
+				return;
+			}
+			if (document.body.clientWidth>=1200) {
+				olink.href="css/1200.css"
+				return;
+			}
+		})
+	</script>
+</html>

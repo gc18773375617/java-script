@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		for(i=1;i<=10000;i++){
+			y=parseInt(i/100);
+			z=parseInt((i%100)/10);
+			a=i%10;
+			a*a*a+z*z*z+y*y*y==i&& document.write(" "+i+" ");
+		}
+	</script>
+</html>

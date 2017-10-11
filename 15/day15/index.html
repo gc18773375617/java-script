@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			div{width: 100px;height: 100px;background-color: red;position: absolute;}
+		</style>
+	</head>
+	<body>
+		<button>开始</button>
+		<button>结束</button>
+		<div style="left:0;" id="">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+//		var i=0;
+//		var oh=document.querySelector("h1");
+//		setInterval(function () {
+//			oh.innerText=i++;
+//		},1000)
+		var time;
+		var odiv = document.querySelector("div");
+		var star = document.getElementsByTagName("button")[0];
+		var end = document.getElementsByTagName("button")[1];
+		var ll=odiv.;
+		console.log(ll)
+		star.onclick=function () {
+			clearInterval(time);
+			time=setInterval(function (){
+				ll+=2;
+				odiv.style.left=ll+"px";
+			},20)
+		}
+		end.onclick=function () {
+			clearInterval(time);
+		}
+	</script>
+</html>

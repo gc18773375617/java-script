@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#i{width: 100px;height: 100px;background-color: red;position:absolute;}
+		</style>
+	</head>
+	<body>
+		<div id="i">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var odiv=document.querySelector("#i");
+		odiv.onmousedown=function (ev) {
+			var tt=ev.clientX-odiv.offsetLeft;
+			var ll=ev.clientY-odiv.offsetTop;
+		document.onmousemove=function (ev) {
+			odiv.style.left=(ev.clientX-tt)+"px";
+			odiv.style.top=(ev.clientY-ll)+"px"
+		}
+		}
+		document.onmouseup=function () {
+			document.onmousemove=null;
+		}
+	</script>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+			margin: 0;
+			padding: 0;
+		}
+		html {
+			height: 100%;
+		}
+		body {
+			height: 100%;
+			background: url(img/bg.jpg);
+			background-size: cover;
+			overflow: hidden;
+		}
+		.ballon {
+			width: 81px;
+			height: 119px;
+			background: url(img/ballon.png) no-repeat;
+			position: absolute;
+			cursor: crosshair;
+		}
+		h1 {
+			font-weight: 600;
+			color: white;
+			font-size: 60px;
+		}
+		</style>
+	</head>
+	<body>
+		<h1>0</h1>
+	</body>
+	<script type="text/javascript">
+		var oh = document.querySelector("h1");
+		function Ball () {
+			this.dom = document.createElement("div");
+			this.dom.className="ballon";
+			document.body.appendChild(this.dom);
+			this.dom.style.left=parseInt(Math.random()*1300)+"px";
+			this.dom.style.top=500+"px";
+			this.score=parseInt(Math.random()*8);
+			this.dom.style.backgroundPositionX=-((this.score-1)%4)*96+"px";
+			this.dom.style.backgroundPositionY=-parseInt(this.score/4)*119+"px";
+			var self = this ;
+			this.dom.onclick=function () {
+				self.dom.parentNode.removeChild(self.dom);
+				oh.innerText=parseInt(oh.innerText)+self.score;
+			}
+			Ball.prototype.fly  = function () {
+				var self=this;
+				this.timer=setInterval(function () {
+					self.dom.style.top=(parseInt(self.dom.style.top)-self.score*2)+"px";
+					if (parseInt(self.dom.style.top)<50) {
+						self.dom.parentNode.removeChild(self.dom);
+						clearInterval(self.timer);
+					}
+				},50)
+			}
+			this.fly()
+		}
+		setInterval(function () {
+			var ball = new Ball()
+		},500)
+	</script>
+</html>

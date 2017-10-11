@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<button>波动站</button>
+	</body>
+	<script type="text/javascript">
+		var obt=document.getElementsByTagName("button")[0];
+		var i=false;
+		obt.onclick=function () {
+			if (i) {
+				return;
+			}
+			i=true;
+			setTimeout(function () {
+				i=false;
+			},3000)
+			console.log("hasage");
+		}
+	</script>
+</html>

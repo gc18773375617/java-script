@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.bor{width: 400px;height: 200px;border: 5px solid black;margin: 50px auto 0 auto;position: relative;overflow: hidden;}
+			.bor>ul>li{list-style: none;float: left;}
+			img{width:400px;height: 200px;}
+			.bor>ul{position: absolute;width: 2600px;left: 0;top:0;}
+			.foot{margin:auto; width: 400px;height: 50px;}
+			.foot ul{margin:auto;width: 100px;}
+			.foot ul li{float: left;margin-left:20px;cursor: pointer;}
+			.ll{
+				position:absolute;
+				left:0;
+				top:95px;
+				z-index: 99;
+				color: red;
+				cursor: pointer;
+				display: none;
+			}
+			.rr{
+				position:absolute;
+				right:0;
+				top:95px;
+				z-index: 99;
+				color: red;
+				cursor: pointer;
+				display: none;
+			}
+			.bor:hover .ll{
+				display: block;
+			}
+			.bor:hover .rr{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bor">
+			<div class="ll">
+				←
+			</div>
+			<div class="rr">
+				→
+			</div>
+			<ul>
+				<li class="pic"><img src="img/0.jpg"/></li>
+				<li class="pic1"><img src="img/1.jpg"/></li>
+				<li class="pic2"><img src="img/2.jpg"/></li>
+				<li class="pic3"><img src="img/3.jpg"/></li>
+				<li class="pic4"><img src="img/4.jpg"/></li>
+				<li class="pic"><img src="img/0.jpg"/></li>
+			</ul>
+		</div>
+		<div class="foot">
+			<ul>
+				<li style="color:red"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/tween.js">
+	</script>
+	<script type="text/javascript">
+		var oll=document.body.getElementsByClassName("ll")[0];
+		var orr=document.body.getElementsByClassName("rr")[0];
+		var oul=document.body.getElementsByTagName("ul")[0];
+		var point=document.body.getElementsByTagName("li");
+		var obor=document.body.getElementsByClassName("bor")[0];
+		var fps=0; 
+		var dis=0;
+		var d=0;
+		var i=6;
+		point[6].onclick=function () {
+			i=6;
+			for (j=6;j<11;j++) {
+				point[j].style.color="black";
+			}
+			point[i].style.color="red";
+			fps=0;
+			oul.style.left="-"+Tween.Linear(fps,dis,400,200)+"px";
+		}
+		point[7].onclick=function () {
+			i=7;
+			for (j=6;j<11;j++) {
+				point[j].style.color="black";
+			}
+			point[i].style.color="red";
+			fps=200;
+			oul.style.left="-"+Tween.Linear(fps,dis,400,200)+"px";
+		}
+		point[8].onclick=function () {
+			i=8;
+			for (j=6;j<11;j++) {
+				point[j].style.color="black";
+			}
+			point[i].style.color="red";
+			fps=400;
+			oul.style.left="-"+Tween.Linear(fps,dis,400,200)+"px";
+		}
+		point[9].onclick=function () {
+			i=9;
+			for (j=6;j<11;j++) {
+				point[j].style.color="black";
+			}
+			point[i].style.color="red";
+			fps=600;
+			oul.style.left="-"+Tween.Linear(fps,dis,400,200)+"px";
+		}
+		point[10].onclick=function () {
+			i=10;
+			for (j=6;j<11;j++) {
+				point[j].style.color="black";
+			}
+			point[i].style.color="red";
+			fps=800;
+			oul.style.left="-"+Tween.Linear(fps,dis,400,200)+"px";
+		}
+		var timer2=setInterval(function () {
+			for (j=6;j<11;j++) {
+				point[j].style.color="black"
+			}
+			i++;
+			if (i>10) {
+				i=6
+			}
+			point[i].style.color="red"
+			clearInterval(timer);
+			var timer=setInterval(function () {
+			fps+=10;
+			console.log(Tween.Linear(fps,dis,400,200));
+			oul.style.left="-"+Tween.Linear(fps,dis,400,200)+"px";
+			if (fps==200 || fps==400 || fps==600 || fps==800 || fps==1000) {
+				clearInterval(timer);
+			}
+			console.log(oul.style.left);
+			if(Tween.Linear(fps,dis,400,200)>=2000) {
+				fps=0;
+			}},20);
+		},5000)
+		orr.onclick=function () {
+			for (j=6;j<11;j++) {
+				point[j].style.color="black"
+			}
+			i++;
+			if (i>10) {
+				i=6;
+			}
+			point[i].style.color="red";
+			clearInterval(timer);
+			var timer=setInterval(function () {
+			fps+=10;
+			console.log(Tween.Linear(fps,dis,400,200));
+			oul.style.left="-"+Tween.Linear(fps,dis,400,200)+"px";
+			if (fps==200 || fps==400 || fps==600 || fps==800 || fps==1000) {
+				clearInterval(timer);
+			}
+			console.log(oul.style.left);
+			if(Tween.Linear(fps,dis,400,200)>=2000) {
+				fps=0;
+			}},20);
+		}
+		oll.onclick=function () {
+			for (j=6;j<11;j++) {
+				point[j].style.color="black"
+			}
+			i--;
+			if (i<6) {
+				i=10;
+			}
+			point[i].style.color="red"
+			clearInterval(timer);
+			var timer=setInterval(function () {
+			fps-=10;
+			console.log(Tween.Linear(fps,dis,400,200));
+			oul.style.left=(Tween.Linear(fps,dis,400,200))*(-1)+"px"
+			if (fps<0) {
+				fps=1000;
+			}
+			if (fps==200 || fps==400 || fps==600 || fps==800 || fps==0) {
+				clearInterval(timer);
+			}},20);
+		}
+		obor.onmouseover=function () {
+			clearInterval(timer2);
+		}
+		obor.onmouseleave=function () {
+			timer2=setInterval(function () {
+			for (j=6;j<11;j++) {
+				point[j].style.color="black"
+			}
+			i++;
+			if (i>10) {
+				i=6
+			}
+			point[i].style.color="red"
+			clearInterval(timer);
+			var timer=setInterval(function () {
+			fps+=10;
+			console.log(Tween.Linear(fps,dis,400,200));
+			oul.style.left="-"+Tween.Linear(fps,dis,400,200)+"px";
+			if (fps==200 || fps==400 || fps==600 || fps==800 || fps==1000) {
+				clearInterval(timer);
+			}
+			console.log(oul.style.left);
+			if(Tween.Linear(fps,dis,400,200)>=2000) {
+				fps=0;
+			}},20);
+		},5000)
+		}
+	</script>
+</html>

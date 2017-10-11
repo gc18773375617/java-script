@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		var a=prompt("请输入");
+		n=a.charCodeAt();
+		console.log(n)
+		n>19968&&40869>n&&alert("是汉字");
+		n<19968&&alert("不是汉字");
+		40869<n&&alert("不是汉字");
+		console.log("\u4e00".charCodeAt());
+		console.log("\u9fa5".charCodeAt());
+	</script>
+</html>

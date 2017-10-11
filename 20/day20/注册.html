@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="" method="post">
+			<label>用户名<input /></label></br>
+			<label>密码<input /></label></br>
+			<label>确认密码<input /></label></br>
+			<input type="submit" value="搜索"/>
+		</form>
+	</body>
+	<script type="text/javascript">
+		var i=0;
+		var oin=document.getElementsByTagName("input");
+		for (i=0;i<oin.length;i++) {
+			(function (i) {
+				oin[i].onkeydown=function (event) {
+					 event = event || window.event;
+					if (event.key==="Enter") {
+						event.preventDefault();
+						oin[i+1].focus();
+					}
+			}})(i);
+		}
+	</script>
+</html>

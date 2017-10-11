@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.tab{width: 300px;height: 600px;margin: 20px auto;}
+			.tab ul li {list-style:none;float:left;width: 100px;height: 50px;}
+			.tab-in{width: 300px;height: 300px;float: left;display: none;}
+		</style>
+	</head>
+	<body>
+		<div class="tab">
+			<ul>
+				<li>新闻</li>
+				<li>资讯</li>
+				<li>视频</li>
+			</ul>
+			<div class="tab-in">
+				新闻
+			</div>
+			<div class="tab-in">
+				资讯
+			</div>
+			<div class="tab-in">
+				视频
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var tit=document.body.getElementsByTagName("li");
+		var tex=document.body.getElementsByClassName("tab-in");
+		tex.index=1;
+		console.log(tex.index)
+		for (i=0;i<tit.length;i++) {
+			(function (i) {
+				tit[i].onmouseover=function () {
+					tex[i].style.display="block";
+					console.log(i);
+				}
+			})(i)
+			}
+		for (i=0;i<tit.length;i++) {
+			(function (i) {
+				tit[i].onmouseleave=function () {
+					tex[i].style.display="none";
+					console.log(i);
+				}
+			})(i)
+			}
+	</script>
+</html>

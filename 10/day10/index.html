@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			li{list-style: none;float: left;height: 50px;width: 100px;background-color:#ccc;margin-left:2px;}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<table border=1px solid black cellspacing="0" cellpadding="all">
+			<tr><th>姓名</th><th>薪资</th><th>年龄</th></tr>
+			<tr><td id="na"></td><td id="sa"></td><td id="ag"></td></tr>
+			<tr><td id="na1"></td><td id="sa1"></td><td id="ag1"></td></tr>
+			<tr><td id="na2"></td><td id="sa2"></td><td id="ag2"></td></tr>
+		</table>
+	</body>
+	<script>
+//		var list=document.getElementsByTagName("li");
+//		for (i=0;i<list.length;i++) {
+//			(function (i) {
+//			list[i].onclick = function () {
+//				for (var j=0;j<list.length;j++) {
+//					list[j].style.background="#CCCCCC";
+//				}
+//				list[i].style.background="red";
+//			}
+//		})(i)
+//		}
+		var json=[{"oname":"tom","salary":"8000","age":"20"},{"oname":"tom","salary":"8000","age":"20"},{"oname":"tom","salary":"8000","age":"20"}];
+		document.getElementById("na").innerHTML=json[0].oname;
+		document.getElementById("sa").innerHTML=json[0].salary;
+		document.getElementById("ag").innerHTML=json[0].age;
+		document.getElementById("na1").innerHTML=json[1].oname;
+		document.getElementById("sa1").innerHTML=json[1].salary;
+		document.getElementById("ag1").innerHTML=json[1].age;
+		document.getElementById("na2").innerHTML=json[2].oname;
+		document.getElementById("sa2").innerHTML=json[2].salary;
+		document.getElementById("ag2").innerHTML=json[2].age;
+	</script>
+</html>

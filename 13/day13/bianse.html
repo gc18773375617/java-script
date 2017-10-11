@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#bo{height:100px;width: 100px;}
+		</style>
+	</head>
+	<body id="bo">
+		<button>+</button><input placeholder="请输入颜色R" type="" name="" id="" value="0" /><button>-</button></br>
+		<button>+</button><input placeholder="请输入颜色g" type="" name="" id="" value="0" /><button>-</button></br>
+		<button>+</button><input placeholder="请输入颜色b" type="" name="" id="" value="0" /><button>-</button></br>
+		<button>GO</button>
+	</body>
+	<script type="text/javascript">
+		var onbody=document.getElementById("bo");
+		var rup=document.getElementsByTagName("button")[0];
+		var rdo=document.getElementsByTagName("button")[1];
+		var gup=document.getElementsByTagName("button")[2];
+		var gdo=document.getElementsByTagName("button")[3];
+		var bup=document.getElementsByTagName("button")[4];
+		var bdo=document.getElementsByTagName("button")[5];
+		var rin=document.getElementsByTagName("input")[0];
+		var gin=document.getElementsByTagName("input")[1];
+		var bin=document.getElementsByTagName("input")[2];
+		var go=document.getElementsByTagName("button")[6]
+		var i=0,o=0,p=0;
+		rup.onclick=function () {
+			i+=20;
+			onbody.style.backgroundColor="rgb("+i+","+o+","+p+")";
+			rin.value=i;
+		}
+		rdo.onclick=function () {
+			i-=20;
+			onbody.style.backgroundColor="rgb("+i+","+o+","+p+")";
+			rin.value=i;
+		}
+		gup.onclick=function () {
+			o+=20;
+			onbody.style.backgroundColor="rgb("+i+","+o+","+p+")";
+			gin.value=o;
+		}
+		gdo.onclick=function () {
+			o-=20;
+			onbody.style.backgroundColor="rgb("+i+","+o+","+p+")";
+			gin.value=o;
+		}
+		bup.onclick=function () {
+			p+=20;
+			onbody.style.backgroundColor="rgb("+i+","+o+","+p+")";
+			bin.value=p;
+		}
+		bdo.onclick=function () {
+			p-=20;
+			onbody.style.backgroundColor="rgb("+i+","+o+","+p+")";
+			bin.value=p;
+		}
+		go.onclick=function () {
+			 i=rin.value;
+			 o=gin.value;
+			 p=bin.value;
+			onbody.style.backgroundColor="rgb("+i+","+o+","+p+")";
+		}
+	</script>
+</html>

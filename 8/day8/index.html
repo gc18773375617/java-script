@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script>
+//		var code="Ucai001"
+//		var code1=prompt("请输入验证码Ucai001");
+//		if (code===code1) {
+//				alert("输入正确")
+//			}
+//		while(code!=code1) {
+//			alert('输入错误')
+//			code1=prompt("请输入验证码Ucai001")
+//			if (code===code1) {
+//				alert("输入正确")
+//				break;
+//			}
+//		}
+//		var str=prompt("请输入一段话");
+//		var arr=[];
+//		for(i=0;i<str.length;i++){
+//			arr[arr.length]=(str[i].charCodeAt()+100000+"").slice(1);
+//		}
+//		console.log(arr.join(""));
+//		var keyword="我草";
+//		var a;
+//		var str="女神今晚要来我家,我草草的收拾一下,她又不来了,我草"
+//		var n=-1
+//		while ((n=str.indexOf(keyword,++n))!=-1){
+//			console.log(n);
+//			console.log(str.replace(keyword,"**"));
+//		}
+//		var arr=[];
+//		var a="2016026192000462884726459250952514138378"
+//		function zy(a){
+//			for (i=0;i<a.length;i+=5) {
+//				arr[arr.length]=String.fromCharCode(a.substr(i,5));
+//				console.log(arr[arr.length]);
+//			}
+//		}
+//		zy(a)
+//		console.log(arr);
+		var str ="no zuo no die"
+		var arr
+		function big(){
+			arr=str.split("");
+			
+			for(i=0;i<arr.length;i++){
+				arr[0]=arr[0].toUpperCase();
+				arr[(arr.indexOf(" ",i))+1]=arr[(arr.indexOf(" ",i))+1].toUpperCase();
+			}
+			console.log(arr.join(""));
+		}
+		big();
+	</script>
+</html>

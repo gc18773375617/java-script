@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.ball{width: 50px;height: 50px;border-radius: 50%;background-color: red;position: absolute;}
+			.ban{width:300px;height:30px;background-color: blue;position: absolute;}
+		</style>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function Ball () {
+			this.dom=document.createElement("div");
+			document.body.appendChild(this.dom);
+			this.dom.className="ball"
+			this.dom1=document.createElement("div");
+			document.body.appendChild(this.dom1);
+			this.dom1.className="ban"
+			var self = this;
+			this.dom.style.left=1000+"px";
+			this.dom.style.top=0;
+			this.dom1.style.top=600+"px";
+			this.dom1.style.left=0;
+			var i = 1;
+			var j = 1
+			document.onkeydown = function (event) {
+				if (event.keyCode==39) {
+					self.dom1.style.left=(parseInt(self.dom1.style.left)+10)+"px"
+				}
+				if (event.keyCode==37) {
+					self.dom1.style.left=(parseInt(self.dom1.style.left)-10)+"px"
+				}
+				if (parseInt(self.dom1.style.left)<=0) {
+					self.dom1.style.left=0;
+					return;
+				}
+				if (parseInt(self.dom1.style.left)>=document.body.clientWidth-self.dom1.offsetWidth) {
+					self.dom1.style.left=(document.body.clientWidth-self.dom1.offsetWidth)+"px";
+					return;
+				}
+			}
+			setInterval(function () {
+				self.dom.style.left=(parseInt(self.dom.style.left)+i)+"px";
+				self.dom.style.top=(parseInt(self.dom.style.top)+j)+"px";
+				if (parseInt(self.dom.style.left)>=document.body.clientWidth-self.dom.offsetWidth||parseInt(self.dom.style.left)<=0) {
+					i=-i;
+				}
+				if(parseInt(self.dom.style.top)>=600-self.dom.offsetHeight&&parseInt(self.dom.style.left)>parseInt(self.dom1.style.left)-self.dom.offsetWidth&&parseInt(self.dom.style.left)<parseInt(self.dom1.style.left)+self.dom1.offsetWidth||parseInt(self.dom.style.top)<=0){
+					j=-j
+				}
+			},5)
+		}
+		var a =new Ball()
+	</script>
+</html>

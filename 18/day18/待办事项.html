@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="" name="" id="" value="" /><button>添加</button>
+		<ul>
+			<li>起床</li>
+		</ul>
+	</body>
+	<script>
+		var oin=document.querySelector("input");
+		var obt=document.querySelector("button");
+		var oul=document.querySelector("ul");
+		obt.onclick=function () {
+			var oli=document.createElement("li");
+			oul.appendChild(oli);
+			oli.innerText=oin.value;
+		}
+	</script>
+</html>

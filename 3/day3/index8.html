@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			for(i=1;i<1000;i++){
+				for(n=1,z=0;n<=i;n++){
+					if(i%n==0){
+						z+=n;
+					}
+					if(z==i){
+						document.write(" "+i+" ");
+						break;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

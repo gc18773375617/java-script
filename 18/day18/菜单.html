@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			  * {
+      margin: 0;
+      padding: 0;
+    }
+    .nav {
+      width: 960px;
+      height: 40px;
+      border: 1px solid #000;
+      margin: 50px auto;
+    }
+    .nav>ul {
+      list-style: none;
+    }
+    .nav>ul>li {
+      width: 120px;
+      height: 40px;
+      line-height: 40px;
+      float: left;
+    }
+    .nav>ul>li>a{
+      display: block;
+      width: 120px;
+      line-height: 40px;
+      text-align: center;
+      background-color: orange;
+    }
+    .nav>ul>li>a:hover {
+      background-color: yellow;
+    }
+    .nav>ul>li>.dropbox{
+      width: 160px;
+      overflow: hidden;
+      display: none;
+    }
+    .nav>ul>li>.dropbox>p>a{
+      display: block;
+      width: 160px;
+      height: 30px;
+      line-height: 30px;
+      background-color: #ccc;
+    }
+    .nav>ul>li>.dropbox>p>a:hover{
+      background-color: green;
+    }
+		</style>
+	</head>
+	<body>
+		<div id="nav" class="nav">
+    <ul>
+      <li>
+        <a href="">首页</a>
+      </li>
+      <li>
+        <a href="">网站栏目</a>
+        <div class="dropbox">
+          <p><a href="">子栏目1</a></p>
+          <p><a href="">子栏目2</a></p>
+          <p><a href="">子栏目3</a></p>
+          <p><a href="">子栏目4</a></p>
+          <p><a href="">子栏目5</a></p>
+          <p><a href="">子栏目6</a></p>
+        </div>
+      </li>
+      <li>
+        <a href="">网站栏目</a>
+        <div class="dropbox">
+          <p><a href="">子栏目1</a></p>
+          <p><a href="">子栏目2</a></p>
+          <p><a href="">子栏目3</a></p>
+          <p><a href="">子栏目4</a></p>
+          <p><a href="">子栏目5</a></p>
+          <p><a href="">子栏目6</a></p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <script src="animate.js" charset="utf-8"></script>
+	</body>
+	<script>
+   	var oli=document.getElementsByTagName("li")[1];
+   	var box=document.getElementsByClassName("dropbox")[0];
+   	oli.onmouseenter=function () {
+   		box.style.display="block";
+   		box.style.height="1px";
+   		animate(box,{"height":300},300,function () {});
+   	}
+   	oli.onmouseleave=function () {
+   		box.style.display="block";
+   		animate(box,{"height":0},300,function () {
+   		});
+   	}
+  </script>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			li{list-style: none;}
+			*{margin: 0;padding: 0;}
+			.gd{width: 150px;height: 400px;margin: 50px auto;border: 5px solid black;position: relative;overflow: hidden;}
+			.long{height:1500px;position: absolute;top:0;left:0;}
+			.long ul li{height:100px;width:150px;margin-bottom:5px;}
+			img{height:100px;width: 150px;}
+		</style>
+	</head>
+	<body>
+		<div class="gd">
+			<div class="long">
+				<ul>
+					<li><img src="img/0.jpg"/></li>
+					<li><img src="img/1.jpg"/></li>
+					<li><img src="img/2.jpg"/></li>
+					<li><img src="img/3.jpg"/></li>
+					<li><img src="img/4.jpg"/></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var gdiv=document.getElementsByClassName("long")[0];
+		var list=document.getElementsByTagName("li");
+		gdiv.innerHTML+=gdiv.innerHTML;
+		var ll=gdiv.offsetTop;
+		function move() {
+			ll-=2;
+			gdiv.style.top=ll+"px"
+			if (ll<-len*105) {
+			ll=0;
+		}
+		}
+		var len=list.length/2
+		var timer=setInterval(move,20);
+		gdiv.onmouseover=function () {
+			clearInterval(timer);
+		}
+		gdiv.onmouseleave=function () {
+			clearInterval(timer);
+			timer=setInterval(move,20);
+		}
+	</script>
+</html>

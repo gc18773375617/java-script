@@ -1,0 +1,79 @@
+整理昨天知识点,
+createElement,创建元素,
+getElementbyId(),getElementbyTagName获取元素,
+节点关系,childNodes所有子节点,
+nodeType 1是元素
+上一个节点元素 previousSibling
+样式
+
+DOM对象.style.样式
+DOM对象.on事件名 = function(){
+ //这里面的this指向当前对象
+}
+通用属性: id class name title style
+document.title 获取文本的标题
+console.dir();
+断点调试,添加观察表达式
+自定义属性;对原由标签的功能进行扩展
+用来再元素上面存储数据date-id="1"
+属性操作:DOM对象.getAtrribute(属性名)
+创建属性:DOM对象.setAtrribute;
+getconputedStyle(DOM对象)//获取DOM对象的计算后属性的对象(CSSOM)
+user agent 表示当前的游览器,他代理你去上网
+
+常用事件 click,mouseover,mouseout, focus,blur,load
+信号量 让程序变的简单点 用来判断 就是页面元素的变化都根据这个信号量来决定,自己说的一个名词:
+实际上说白就是以个变量或者属性
+业务逻辑方法:信号量和业务逻辑通常是对应的,业务逻辑会根据信号量的值做出不同的决定,到底是改变元素的颜色还是大小,还是位置等等
+
+页面解析顺序是文本的从上到下
+WINDOWS.ONLOAD:load事件是指当前页面元素加载完成
+
+网络环境模拟 network选项里面
+http://www.baidu.com:80/news/index.php?username=a#fa
+协议  域名 或IP :端口号/路径/文件名?querystring#锚点
+只能删除空的目录
+
+
+1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+iframe 嵌套页面
+1.鼠标悬浮提示文本
+
+222222222222222222222222222222222222222222222
+轮播图
+改变字体大小:this.disabled = ture;
+六个假 :
+flase null undefined 0 "" NaN
+33333333333333333333333333333333333333
+批量绑定事件:就是用循环挨个绑定事件;
+序号法绑定事件:用闭包;
+闭包:
+编号法批量绑定事件:自定义属性方法更简单;
+对应模型:点击上面元素下面的元素样式改变
+clear:both;
+排他模型:先让所有元素变暗色或者判断
+
+选项卡:
+
+新轮播图:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

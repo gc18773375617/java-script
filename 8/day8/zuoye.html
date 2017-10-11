@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var str = "战士@德玛西亚之力@盖伦@3000#射手@寒冰射手@艾希@2500#法师@流浪法师@瑞兹@2700";
+			var arr=str.split("#");
+			console.log(arr);
+			var nr=[];
+			for (i=0;i<3;i++) {
+				nr[nr.length]=arr[i].split("@")
+			}
+				document.write("职业: "+nr[0][0]+" 称号: "+nr[0][1]+" 姓名: "+nr[0][2]+" 血量: "+nr[0][3]+"</br>")
+				document.write("职业: "+nr[1][0]+" 称号: "+nr[1][1]+" 姓名: "+nr[1][2]+" 血量: "+nr[1][3]+"</br>")
+				document.write("职业: "+nr[2][0]+" 称号: "+nr[2][1]+" 姓名: "+nr[2][2]+" 血量: "+nr[2][3]+"</br>")
+			
+		</script>
+	</body>
+</html>

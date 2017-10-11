@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.big{height: 6666px;}
+			.top{position: fixed;}
+		</style>
+	</head>
+	<body>
+		<div class="big">
+		
+		<div class="top">
+			
+		</div>
+	</div>
+	</body>
+	<script type="text/javascript">
+		var ob=document.getElementsByClassName("big")[0];
+		var ot=document.getElementsByClassName("top")[0];
+		window.onscroll = function () {
+			ot.innerText=document.body.scrollTop;
+		}
+	</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			li{list-style: none;}
+			.age{width: 50px;height: 20px;border: 1px solid black;}
+			.age1{width:108px;height: 120px;overflow: auto;display: none;position: relative;left:-39px;}
+			.age1 ul li{height:30px}
+			.age1 ul li:hover {background-color:blue;}
+			.age>div{border: 5px solid transparent;border-top-color: black;width: 0;height: 0;float: right;margin-top: 10px;}
+		</style>
+	</head>
+	<body>
+		<div class="age">
+			年份<div></div>
+		</div>
+		<div class="age1">
+			<ul>
+				<li>1995</li>
+				<li>1996</li>
+				<li>1997</li>
+				<li>1998</li>
+				<li>1999</li>
+				<li>2000</li>
+				<li>2001</li>
+				<li>2002</li>
+				<li>2003</li>
+				<li>2004</li>
+				<li>2005</li>
+				<li>2006</li>
+				<li>2007</li>
+				<li>2008</li>
+				<li>2009</li>
+			</ul>
+		</div>
+	</body>
+	<script>
+		var odiv=document.querySelector(".age");
+		var oage=document.querySelector(".age1")
+		var i=0;
+		var xh;
+		odiv.onmousedown=function () {
+			i++;
+			if(i%2==1){
+				xh="block";
+			}else{
+				xh="none";
+			}
+			oage.style.display=xh;
+		}
+	</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			html{height: 6666px;}
+			.top{width:70px;height: 50px;position:fixed;bottom: 20px;right: 20px;background-color: #ccc;text-align: center;}
+		</style>
+	</head>
+	<body>
+		<div class="top">
+			回到顶部
+		</div>
+	</body>
+	<script type="text/javascript">
+		var time;
+		var odiv=document.querySelector("div");
+		odiv.addEventListener("click",function () {
+			var scr=document.body.scrollTop;
+			time=setInterval(function () {
+				if (scr==0) {
+					return
+				}
+				scr-=100;
+				document.body.scrollTop=scr;
+			},20)
+		})
+		
+	</script>
+</html>

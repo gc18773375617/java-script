@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var arr=[111111,1111111,1,1,1,1,1,11,1,1,1,11,3,3,3,3,3,3,3,3,2,2,2,2,2,22,2,33,3,3,3,3,3,3];
+			for (i=0;i<arr.length;i++) {
+				for (n=1;n<arr.length;n++) {
+					if (arr[i]==arr[n]) {
+						arr.splice(n,1);
+					}
+				}
+			}
+			document.write(arr);
+		</script>
+	</body>
+</html>

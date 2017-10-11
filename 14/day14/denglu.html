@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<label><span id="">用户名:</span><input type="text"placeholder="请输入用户名" value=""/></label>
+			<label><span id="">密码:</span><input type="password"placeholder="请输入密码" value=""/></label>
+			<label><span id="">确认密码:</span><input type="password"placeholder="再次输入密码" value=""/></label>
+			<input type="submit" name="" id="" value="提交" />
+		</form>
+	</body>
+	<script type="text/javascript">
+		var oform=document.body.getElementsByTagName("form")[0];
+		var oname=document.body.getElementsByTagName("input")[0];
+		var onpass=document.body.getElementsByTagName("input")[1];
+		var onpass1=document.body.getElementsByTagName("input")[2];
+		oform.onsubmit=function () {
+			
+			if (!/^[A-Za-z]\w{5,11}/.test(oname.value)) {
+				console.log(oname);
+				console.log(onpass);
+				console.log(onpass1);
+				alert("用户名格式不对");
+				return false;
+			}
+			if (!/^\d{6,16}/.test(onpass.value)) {
+				alert("密码输入错误");
+				return false;
+			}
+			if (!onpass.value===onpass1.value) {
+				alert("两次输入的密码不一致");
+				return false;
+			}
+			return true;
+		}
+	</script>
+</html>

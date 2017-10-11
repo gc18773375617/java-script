@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var str=prompt("请输入");
+			var str1=prompt("请在输入");
+			var max=str1.length;
+			var arr=[];
+			var arr1=[];
+			if (str.length>str1.length) {
+				max=str.length;
+			}
+			console.log(max);
+			for (i=1;i<max;i++) {
+				arr=[];
+				arr1=[];
+				for (n=0;n<max;n++) {
+					arr[arr.length]=str.substr(n,i)
+					arr1[arr.length]=str1.substr(n,i)
+				}
+				
+				arr=arr.concat(arr1);
+				for(v=0;v<max;v++){
+					for (b=v+1;b<max;b++) {
+						if (arr[v]=arr1[b]) {
+							
+						}
+					}
+					
+				}
+			}
+		</script>
+	</body>
+</html>
